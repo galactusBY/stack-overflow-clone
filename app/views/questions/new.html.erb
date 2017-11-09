@@ -1,0 +1,19 @@
+<div class="container">
+
+  <% if session[:user_id] %>
+    <h1>What's Your Question?</h1>
+    <form action="/questions" method="POST">
+      <label>Title:&nbsp;</label>
+      <input type="text" name="title">
+      <div>
+        <label>Problem Description</label>
+        <textarea name="question" rows="8" cols="80" placeholder="Please elaborate...."></textarea>
+      </div>
+      <input type="submit" value="Post">
+    </form>
+  <% else %>
+    <h1>Please log in to post a question.</h1>
+    <p><a href="javascript:history.back()">Back to Home</a></p>
+  <% end %>
+
+</div>

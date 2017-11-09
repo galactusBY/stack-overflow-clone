@@ -1,0 +1,28 @@
+<div class="container">
+  <h1 id='questions-title'>Questions</h1>
+
+  <div>
+      <div class="line"></div>
+      <% @questions.each do |question| %>
+      <div class="index-item">
+        <div class="index-group">
+          <p><%= question.votes.reduce(0) {|sum, vote| sum += vote.shaka } %></p>
+          <p class="tag">VOTES</p>
+        </div>
+        <div class="index-group">
+          <p><%= question.answers.count %></p>
+          <p class="tag">ANSWERS</p>
+        </div>
+        <div class="index-question">
+          <p><a href= <%= "/questions/#{question.id}"  %> >  <%= question.title %> </a></p>
+        </div>
+      </div>
+      <div class="line"></div>
+      <% end %>
+  </div>
+
+  <div>
+    <h3><a id="new-question-tag" href="questions/new">Post A New Question</a></h3>
+  </div>
+
+</div>  <!--  end container -->
