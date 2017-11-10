@@ -9,6 +9,42 @@
   </head>
 
   <body>
+    <header>
+    <img id="sick" src="../assets/sick.svg" alt="sick!"/>
+    <a href='/'><img id="title-header" src="../assets/overphotesHeader.svg" alt="overphotes header"/></a>
+    <nav>
+      <div class="nav-user-auth front">
+        <ul>
+          <% if session[:user_id] %>
+          <li><a href="/users/<%= session[:user_id] %> "> <%= User.find(session[:user_id]).username %> </a></li>
+          <li>
+          <form action="/sessions" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" name="Logout" value="Logout">
+          </form>
+          </li>
+          <% else %>
+          <!-- Login here  -->
+          <div class="login-container">
+            <form id="landing-login-form" action="/sessions" method="post">
+              <input class="login-input" type="email" name="email" placeholder="Email"/>
+              <input class="login-input" type="password" name="password" placeholder="Password"/>
+              <input class="login-input button" type="submit" value="log me in, bro!" name="submit"/>
+              <span>No Account? No Problem!</span>
+              <span><a id="signup-link" href="/users/new">Sign up here!</a></span>
+            </form>
+          </div>
+          <!-- end login  -->
+          <% end %>
+        </ul>
+      </div>
+
+    </nav>
+      <svg id="header-polygon" viewBox="0,0 100,100" preserveAspectRatio="none">
+        <polygon points="0,40 15,100 50,10 55,100 100,05 100,100 0,100 "/>
+      </svg>
+    </header>
+
     <%= yield %>
   </body>
 </html>

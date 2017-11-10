@@ -15,7 +15,7 @@
  */
  @font-face {
   font-family: ddc-condensed;
-  src: url(../assets/ddchardware-condensed.woff);
+  src:font-url("ddchardware-condensed.woff") format("woff");
 }
 
 :root {
