@@ -1,0 +1,13 @@
+<h1><%= @user.username %></h1>
+
+<div>
+  <ul>
+    <% @user.questions.each do |question| %>
+    <li> <a href="/questions/<%=question.id%>"> <%= question.title %> </a> </li>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <!-- placeholder for answers -->
+</div>

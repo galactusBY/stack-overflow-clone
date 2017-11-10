@@ -13,3 +13,359 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+  font-family: ddc-condensed;
+  src:font-url("ddchardware-condensed.woff") format("woff");
+}
+
+:root {
+  --blue: #66C3FF;
+  --text: #333333;
+  --pink: #DB37D3;
+  --mint: #1CD6A3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+  /*THIS IS TOTALLY NOT COOL DON'T DO IT - NEED FIX*/
+body {
+  background-color: #fafafa;
+  margin-top: -16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'ddc-condensed','Roboto', sans-serif;
+  color: var(--text);
+}
+
+span {
+  color: var(--text);
+}
+
+.container {
+  width: 70%;
+  margin-left: 5%;
+  margin-top: 20px;
+}
+
+.login-container span {
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: 1.15em;
+}
+
+#signup-link {
+  font-size: 1.9em;
+  color: blue;
+}
+
+header {
+  position: relative;
+  background-color: var(--blue);
+  height: 300px;
+  width: 100%;
+  border: 0px solid blue;
+}
+
+#header-polygon {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  fill: #fafafa;
+}
+
+#title-header {
+  position: absolute;
+  display: inline;
+  width: 60%;
+  max-width: 550px;
+  margin-top: 0px;
+  left: 5%;
+  bottom: 30%
+}
+
+#sick {
+  position: absolute;
+  width: 17%;
+  left: 5%;
+  bottom: 46%;
+  z-index: 1;
+}
+
+#landing-login-form {
+  position: absolute;
+  text-align: center;
+  top: 8%;
+  right: 35px;
+  width: 200px;
+  min-width: 150px;
+}
+
+.login-input {
+  display: block;
+  width: 200px;
+  border: none;
+  margin: 8px 0;
+  padding: 5px 0 5px 5px;
+  font-size: 1.4em;
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  color: var(--text);
+  border-radius: 2px;
+}
+
+.button {
+  background: var(--pink);
+  width: 205px;
+}
+
+/*INDEX STYLES*/
+#questions-title {
+  margin-left: 6%;
+  margin-bottom: 35px;
+}
+
+.index-item {
+  width: 100%;
+  margin-left: 2%;
+  display: inline-flex;
+}
+
+.index-group {
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+  max-height: 70px;
+  min-height: 70px;
+  min-width: 70px;
+  max-width: 70px;
+  flex-basis: auto;
+}
+
+.index-question{
+  font-size: 1.2em;
+  padding-left: 3%;
+  max-width: 75%;
+  min-width: 75%;
+  flex-basis: auto;
+}
+
+.line {
+  height: 3px;
+  margin: 5px;
+  width: 100%;
+  min-width: 525px;
+  background-color: var(--pink);
+}
+
+.tag {
+  display: block;
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: .9em;
+  margin-top: -10px;
+}
+/* button styles */
+
+.em-metal,
+.em-poop {
+  font-size: 1.75em;
+}
+
+.sick-button {
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: 1.5em;
+  background-color: #fff;
+  border: none;
+}
+
+.submit-comment {
+  font-size: 2em;
+  background-color: var(--pink);
+  border: 2px solid #000;
+}
+
+/* textarea styles */
+
+h2, p, label, li {
+  /*font-family: 'ddc-condensed', 'Roboto', sans-serif;*/
+  list-style-type: circle;
+}
+
+.scramblin {
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+}
+
+input {
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: 1.5em;
+}
+
+#comment-text-area,
+#answer-text-area {
+  border: 2px solid #000;
+  margin-top: 1.75em;
+  margin-bottom: 2.75em;
+}
+
+#new-question-tag {
+  display: inline-block;
+  margin-left: 3%;
+  font-size: 1.9em;
+  color: var(--blue);
+}
+
+
+/* button styles */
+
+.em-metal,
+.em-poop {
+  font-size: 1.75em;
+}
+
+.sick-button {
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: 1.5em;
+  background-color: #fff;
+  border: none;
+}
+
+.submit-comment {
+  font-size: 2em;
+  background-color: var(--pink);
+  border: 2px solid #000;
+}
+
+.submit-comment:hover,
+.submit-comment:focus {
+  background-color: var(--blue);
+  color: #fff;
+  transition: .4s;
+  border: 2px solid var(--text);
+}
+
+.upvote {
+  color: var(--pink);
+}
+
+.downvote {
+  color: var(--blue);
+}
+
+.upvote,
+.downvote {
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.upvote:hover,
+.upvote:focus {
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+.downvote:hover,
+.downvote:focus {
+  transition: .5s;
+  transform: rotate(360deg);
+}
+
+/* end button styles */
+
+/*SHOW PAGES*/
+
+/*questions*/
+.single-question-container {
+  margin: 35px 0;
+  width: 100%;
+  display: inline-flex;
+}
+
+.single-for-flex {
+  padding-left: 3%;
+}
+
+.question-votes-container {
+  max-width: 100px;
+  text-align: center;
+}
+
+.question-votes-container p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--pink);
+}
+
+.question-user {
+  color: var(--blue);
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+  font-size: 1.6em;
+  text-align: right;
+  padding-right: 20%;
+}
+
+/*answers*/
+
+.single-answer-container {
+  margin: 35px 0;
+  width: 100%;
+  display: inline-flex;
+}
+
+.single-answer-for-flex {
+  padding-left: 3%;
+}
+
+.single-answer-for-flex p:first-child {
+  font-size: 1.3em;
+}
+
+.answer-votes-container {
+  max-width: 100px;
+  text-align: center;
+}
+
+.answer-votes-container p {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: var(--pink);
+}
+
+.answer-comment {
+  list-style: none;
+  color: var(--blue);
+}
+
+.answer-user {
+  color: var(--blue);
+  font-family: 'ddc-condensed', 'Roboto', sans-serif;
+}
+
+#answer-text-area {
+  width: 100%;
+  height: 200px;
+  border-radius: 3px;
+  /*border: none;*/
+}
+
+/* I ADDED BORDERS JAMIE SRRY! */
+
+#comment-text-area {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  /*border: none;*/
+}
