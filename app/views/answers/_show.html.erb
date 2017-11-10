@@ -1,0 +1,45 @@
+<div class="single-answer-container">
+<div class="answer-votes-container">
+  <form class="a-vote-form" action="/votes" method="POST">
+    <input type="hidden" value="<%= @answer.id %>" name="answer_id" />
+    <input type="hidden" value="<%= @question.id %>" name="question_id" />
+    <input type="hidden" value="1" name="shaka" />
+    <input type="hidden" value="Answer" name="voteable_type" />
+    <input class="sick-button upvote" type="submit" value="Upvote!" />
+    <i class="em em-metal"></i>
+    <!-- button -->
+  </form>
+
+  <p><%= @answer.votes.reduce(0) {|sum, vote| sum += vote.shaka } %></p>
+
+  <form class="a-vote-form" action="/votes" method="POST">
+    <input type="hidden" value="<%= @answer.id %>" name="answer_id" />
+    <input type="hidden" value="<%= @question.id %>" name="question_id" />
+    <input type="hidden" value="-1" name="shaka" />
+    <input type="hidden" value="Answer" name="voteable_type" />
+    <input class="sick-button downvote" type="submit" value="Downvote!" />
+    <i class="em em-poop"></i>
+    <!-- button -->
+  </form>
+</div>
+
+ <div class="single-answer-for-flex">
+  <p><%=  @answer.description %> - <span class="answer-user"><%= @answer.user.username %></span></p>
+  <% if !@answer.comments.empty? %>
+    <p>Comments:</p>
+    <ul>
+      <% @answer.comments.each do |comment| %>
+        <li class="answer-comment"><%= comment.response %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</div>
+</div>
+
+
+  <form action="/comments/new" method="get">
+    <input type="hidden" name="answer_id" value="<%= @answer.id %>">
+    <input class="sick-button submit-comment" type="submit" value="Comment">
+    <!-- button -->
+  </form>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="comments">
+    <% if session[:user_id] %>
+      <form id="new-comment" action="/comments_answers" method="post">
+        <label>Comment:</label>
+        <input type="textarea" name="comment" />
+        <input type="hidden" name="answer_id" value="<%= @answer.id %>" />
+        <input type="submit" value="Post Comment">
+      </form>
+    <% end %>
+  </div>
+</div>
